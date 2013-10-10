@@ -18,5 +18,5 @@ configure :build do
   # activate :relative_assets
 
   # Or use a different image path
-  # set :http_prefix, '/docs/'
+  # set :http_prefix, '/kanpachi-example/'
 end
