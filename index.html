@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="" name="description" /><meta content="" name="author" /><link href="/favicon.png" rel="shortcut icon" /><title>REST API v1.1 Resources - Twitter</title><!--Bootstrap core CSS--><link href="/kanpachi-example/stylesheets/bootstrap-7f467e97.css" rel="stylesheet" type="text/css" /><!--Custom styles for this template--><link href="/kanpachi-example/stylesheets/jumbotron-2b6dc76f.css" rel="stylesheet" type="text/css" /><!--HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries--><!--[if lt IE 9]><script src="/kanpachi-example/javascripts/ie-27e7fa4f.js" type="text/javascript"></script><![endif]--></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"></a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav"><li class="active"><a href="/kanpachi-example/">Home</a></li><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sections<b class="caret"></b></a><ul class="dropdown-menu"><li><a href="/kanpachi-example/#timelines">Timelines</a></li><li><a href="/kanpachi-example/#tweets">Tweets</a></li><li><a href="/kanpachi-example/#search">Search</a></li></ul></li><li><a href="/kanpachi-example/errors/">Errors</a></li></ul></div><!--/.navbar-collapse--></div></div><div class="jumbotron"><div class="container"><h1>REST API v1.1 Resources</h1><p><p>This describes the resources that make up the official Twitter API v1.1</p>
+</p></div></div><div class="container"><div class="row"><div class="content col-md-12"><a name="timelines"></a><h3>Timelines</h3><p><p>Timelines are collections of Tweets, ordered with the most recent first.</p>
+</p><div class="table-responsive"><table class="table table-hover"><thead><tr><th>Resource</th><th>Description</th></tr></thead><tbody><tr><td><a href="get/statuses/mentions_timeline">GET /statuses/mentions_timeline</a></td><td><p>Returns the 20 most recent mentions (tweets containing a users’s @screen_name)
+for the authenticating user.</p>
+
+<p>The timeline returned is the equivalent of the one seen when you view
+<a href="https://twitter.com/mentions">your mentions</a> on twitter.com.</p>
+
+<p>This method can only return up to 800 tweets.</p>
+
+<p>See <a href="https://dev.twitter.com/docs/working-with-timelines"><strong>Working with Timelines</strong></a>
+for instructions on traversing timelines.</p>
+</td></tr><tr><td><a href="get/statuses/user_timeline">GET /statuses/user_timeline</a></td><td><p>Returns a collection of the most recent Tweets posted by the user indicated by
+the screen_name or user_id parameters.</p>
+
+<p>User timelines belonging to protected users may only be requested when the
+authenticated user either “owns” the timeline or is an approved follower of the
+owner.</p>
+
+<p>The timeline returned is the equivalent of the one seen when you view a user’s
+profile on twitter.com.</p>
+
+<p>This method can only return up to 3,200 of a user’s most recent Tweets. Native
+retweets of other statuses by the user is included in this total, regardless of
+whether include_rts is set to false when requesting this resource.</p>
+
+<p>See Working with Timelines for instructions on traversing timelines.</p>
+
+<p>See Embeddable Timelines, Embeddable Tweets, and GET statuses/oembed for tools
+to render Tweets according to Display Requirements.</p>
+</td></tr></tbody></table></div><a name="tweets"></a><h3>Tweets</h3><p><p>Tweets are the atomic building blocks of Twitter, 140-character status updates with additional associated metadata. People tweet for a variety of reasons about a multitude of topics.</p>
+</p><div class="table-responsive"><table class="table table-hover"><thead><tr><th>Resource</th><th>Description</th></tr></thead><tbody><tr><td><a href="get/statuses/retweets/_id">GET /statuses/retweets/:id</a></td><td><p>Returns a collection of the 100 most recent retweets of the
+tweet specified by the id parameter.</p>
+</td></tr></tbody></table></div><a name="search"></a><h3>Search</h3><p><p>Find relevant Tweets based on queries performed by your users.</p>
+</p><div class="table-responsive"><table class="table table-hover"><thead><tr><th>Resource</th><th>Description</th></tr></thead><tbody><tr><td><a href="get/search/tweets">GET /search/tweets</a></td><td><p>Returns a collection of relevant Tweets matching a specified query.</p>
+
+<p>Please note that Twitter’s search service and, by extension, the Search API is
+not meant to be an exhaustive source of Tweets. Not all Tweets will be indexed
+or made available via the search interface.</p>
+
+<p>In API v1.1, the response format of the Search API has been improved to return
+Tweet objects more similar to the objects you’ll find across the REST API and
+platform. You may need to tolerate some inconsistencies and variance in
+perspectival values (fields that pertain to the perspective of the
+  authenticating user) and embedded user objects.</p>
+
+<p>To learn how to use Twitter Search effectively, consult our guide to Using the
+Twitter Search API. See Working with Timelines to learn best practices for
+navigating results by since_id and max_id.</p>
+</td></tr></tbody></table></div><hr /></div></div></div><hr><footer><div class="container">&copy; 2014</div></footer></hr><!--/container--><!----><!--Bootstrap core JavaScript--><!--==================================================--><!--Placed at the end of the document so the pages load faster--><script src="/kanpachi-example/javascripts/all-e551929b.js" type="text/javascript"></script></body></html>
